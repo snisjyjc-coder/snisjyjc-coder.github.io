@@ -269,15 +269,6 @@ a{color:inherit}
 }
 
 /* ---------- 오시는 길 ---------- */
-.map{
-  margin-bottom:32px;
-  background:var(--white);
-  border:1px solid var(--line);
-  overflow:hidden;
-  min-height:120px;
-}
-.map .root_daum_roughmap{width:100%}
-.map .root_daum_roughmap .wrap_map{height:400px}
 .visit{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:30px}
 .visit h3{font-size:0.87rem;font-weight:500;color:var(--ink-soft);margin-bottom:6px}
 .visit p{margin-bottom:22px}
@@ -308,7 +299,6 @@ a{color:inherit}
   .band{padding:52px 0}
   .cells{grid-template-columns:1fr;gap:12px}
   .visit{grid-template-columns:1fr;gap:20px}
-  .map .root_daum_roughmap .wrap_map{height:300px}
   .title{font-size:1.4rem}
   .mark .emblem{width:36px;height:36px}
 }
@@ -589,7 +579,7 @@ a{color:inherit}
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.4h3.4l1.7 4.2-2.1 1.5a12.4 12.4 0 006.7 6.7l1.5-2.1 4.2 1.7v3.4a1.8 1.8 0 01-2 1.8C11.2 20 4 12.8 3.4 5.4a1.8 1.8 0 011.8-2z"/></svg>
           전화로 문의 031-913-7955
         </a>
-        <a class="btn btn-outline" href="mailto:aden.tree.apple@gmail.com">
+        <a class="btn btn-outline" href="mailto:jupusoon@naver.com">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.8" y="5" width="18.4" height="14" rx="2.2"/><path d="M3.4 6.6L12 12.8l8.6-6.2"/></svg>
           이메일로 문의
         </a>
@@ -605,35 +595,6 @@ a{color:inherit}
         오시는 길
       </h2>
       <p class="lead">지하철역과는 거리가 있어 버스나 자가용을 권해 드립니다.</p>
-
-      <!--
-      ┌────────────────────────────────────────────────────┐
-      │  ★ 지도 ★   카카오맵 지도 퍼가기                     │
-      │                                                    │
-      │  다른 위치로 바꾸시려면 map.kakao.com 에서 장소를    │
-      │  검색하시고 [공유] → [지도 퍼가기] 의 코드를 받아    │
-      │  아래 timestamp 와 key 두 값만 바꾸시면 됩니다.      │
-      │                                                    │
-      │  mapWidth 는 100% 로 두셔야 휴대전화에서 화면 밖으로 │
-      │  삐져나가지 않습니다. 숫자로 바꾸지 마십시오.        │
-      └────────────────────────────────────────────────────┘
-      -->
-
-      <!-- ===== START 여기부터 ===== -->
-      <div class="map">
-        <div id="daumRoughmapContainer1789021840065" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-      </div>
-
-      <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-      <script charset="UTF-8">
-        new daum.roughmap.Lander({
-          "timestamp": "1789021840065",
-          "key": "2inm4mvedabj",
-          "mapWidth": "100%",
-          "mapHeight": "400"
-        }).render();
-      </script>
-      <!-- ===== END 여기까지 ===== -->
 
       <div class="visit">
         <div>
@@ -680,7 +641,7 @@ a{color:inherit}
     <p>경기도 고양시 일산서구 장자길 81-1 · 031-913-7955</p>
     <div class="foot-links">
       <a href="https://www.youtube.com/@jesuslight153" target="_blank" rel="noopener">유튜브</a>
-      <a href="mailto:aden.tree.apple@gmail.com">이메일</a>
+      <a href="mailto:jupusoon@naver.com">이메일</a>
       <a href="#visit">오시는 길</a>
     </div>
   </div>
