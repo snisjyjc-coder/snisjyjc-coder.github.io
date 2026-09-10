@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  ==========================================================
+  일산예광교회 홈페이지
+
+  ----------------------------------------------------------
+  ★ 한 달에 한 번 하실 일 ★
+  Ctrl + F 로 "이달의 소식" 을 검색하십시오.
+  네모 표시 안의 글자만 바꾸시면 됩니다.
+  ----------------------------------------------------------
+  ★ 첫 화면에 사진을 넣고 싶으실 때 ★
+  Ctrl + F 로 "배경사진" 을 검색하십시오. 한 줄만 고치시면 됩니다.
+  ----------------------------------------------------------
+  설교 영상은 유튜브 재생목록에 추가하시면 자동으로 바뀝니다.
+  ==========================================================
+-->
+
+<title>일산예광교회 | 주일 오전 11시 · 고양시 일산서구</title>
+<meta name="description" content="빛되신 예수님을 따라가는 교회. 일산예광교회 주일 낮예배 오전 11시. 경기도 고양시 일산서구 장자길 81-1. 기독교대한감리회.">
+
+<meta property="og:title" content="일산예광교회">
+<meta property="og:description" content="빛되신 예수님을 따라가는 교회. 주일 낮예배 오전 11시.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0E2A5C;
+  --navy-deep:#081B3D;
+  --blue:#1E5AA8;
+  --blue-pale:#EAF1FA;
+  --gold:#FFC629;
+  --gold-soft:#FFF0BF;
+  --white:#FFFFFF;
+  --ink:#16233D;
+  --ink-soft:#5A6884;
+  --line:#D3DDEB;
+
+  --serif:'Noto Serif KR', serif;
+  --sans:'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+
+body{
+  font-family:var(--sans);
+  background:var(--white);
+  color:var(--ink);
+  line-height:1.78;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+.skip{position:absolute;left:-9999px;background:var(--navy);color:#fff;padding:12px 20px;z-index:99}
+.skip:focus{left:0;top:0}
+
+/* ---------- 아이콘 공통 ---------- */
+.ico{
+  width:1em;height:1em;flex:none;
+  fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.emblem{display:block;flex:none;object-fit:contain}
+
+/* ---------- 상단 ---------- */
+.topbar{position:sticky;top:0;z-index:30;background:var(--navy);color:var(--white)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px}
+
+.mark{display:flex;align-items:center;gap:11px;text-decoration:none}
+.mark .emblem{width:40px;height:40px}
+.mark-name{font-family:var(--serif);font-weight:700;font-size:1.08rem;line-height:1.25;display:block}
+.mark-name em{font-style:normal;color:var(--gold)}
+.mark-sub{display:block;font-size:0.71rem;color:#9FB3D4;line-height:1.3;margin-top:1px;letter-spacing:0.02em}
+
+.nav{display:flex;gap:20px;flex-wrap:wrap}
+.nav a{text-decoration:none;font-size:0.89rem;color:#C6D4EA;padding:3px 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--white);border-bottom-color:var(--gold)}
+
+/* ---------- 첫 화면 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  color:var(--white);
+  padding:112px 0 100px;
+
+  /* 사진이 늦게 뜨거나 없을 때를 대비한 바탕색 */
+  background:linear-gradient(168deg,#050B1E 0%,#081B3D 40%,#12305F 72%,#1E4478 100%);
+}
+
+/*
+  ★ 배경사진 ★
+  사진을 바꾸시려면 아래 url 안의 파일 이름만 바꾸시면 됩니다.
+  사진은 images 폴더에 넣으십시오.
+*/
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:url('images/hero.jpg');
+  background-size:cover;
+  background-position:center 62%;
+  pointer-events:none;
+}
+
+/*
+  글자가 잘 보이도록 덮는 층입니다.
+  사진이 너무 어둡게 느껴지시면 아래 숫자들을 조금씩 줄이십시오.
+*/
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(102deg,
+      rgba(4,13,34,.90) 0%,
+      rgba(4,13,34,.74) 34%,
+      rgba(6,22,52,.44) 62%,
+      rgba(6,22,52,.24) 100%),
+    linear-gradient(to bottom,
+      rgba(4,13,34,.34) 0%,
+      rgba(4,13,34,.06) 42%,
+      rgba(4,13,34,.44) 100%);
+  pointer-events:none;
+}
+
+.hero .wrap{position:relative;z-index:1}
+
+.hero-line{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(2rem,6vw,3.1rem);
+  line-height:1.35;letter-spacing:-0.035em;
+  text-shadow:0 2px 18px rgba(3,8,22,.45);
+}
+.hero-line b{color:var(--gold);font-weight:700}
+
+.hero-verse{
+  font-family:var(--serif);
+  margin-top:20px;font-size:clamp(1rem,2.6vw,1.15rem);
+  color:var(--gold-soft);max-width:26em;line-height:1.7;
+  text-shadow:0 1px 12px rgba(3,8,22,.5);
+}
+
+.hero-sub{margin-top:16px;color:#D2DEF0;max-width:28em;font-size:1.01rem;text-shadow:0 1px 10px rgba(3,8,22,.5)}
+
+.hero-time{
+  margin-top:26px;font-size:1.02rem;color:#DCE6F5;
+  padding-left:16px;border-left:3px solid var(--gold);
+}
+.hero-time strong{color:var(--gold);font-weight:500;margin-left:8px}
+
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero .wrap > *{animation:rise .8s cubic-bezier(.2,.7,.3,1) backwards}
+  .hero .wrap > *:nth-child(2){animation-delay:.1s}
+  .hero .wrap > *:nth-child(3){animation-delay:.18s}
+  .hero .wrap > *:nth-child(4){animation-delay:.26s}
+  .hero .wrap > *:nth-child(5){animation-delay:.32s}
+}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* ---------- 버튼 ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  text-decoration:none;padding:13px 24px;
+  font-size:0.93rem;font-weight:500;border:1.5px solid transparent;
+}
+.btn .ico{width:18px;height:18px}
+.btn-gold{background:var(--gold);color:var(--navy-deep);font-weight:700}
+.btn-gold:hover{background:var(--gold-soft)}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:var(--white);backdrop-filter:blur(2px)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--blue)}
+.btn-outline{border-color:var(--navy);color:var(--navy)}
+.btn-outline:hover{background:var(--navy);color:var(--white)}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- 섹션 ---------- */
+.band{padding:70px 0}
+.band-pale{background:var(--blue-pale)}
+.band-navy{background:var(--navy);color:var(--white)}
+
+.title{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--serif);font-weight:700;
+  font-size:1.6rem;letter-spacing:-0.02em;
+}
+.title .ico{width:27px;height:27px;color:var(--blue);stroke-width:1.6}
+.band-navy .title .ico{color:var(--gold)}
+
+.lead{color:var(--ink-soft);margin:10px 0 34px;max-width:34em}
+.band-navy .lead{color:#BCCCE6}
+
+.todo{display:inline-block;background:var(--gold-soft);color:#7A5A00;font-size:0.78rem;font-weight:700;padding:1px 8px;margin-left:6px;vertical-align:middle}
+
+/* ---------- 본문 ---------- */
+.prose p{margin-bottom:18px;max-width:34em}
+.pull{
+  font-family:var(--serif);font-size:1.2rem;line-height:1.72;
+  border-left:4px solid var(--gold);padding-left:22px;
+  margin:30px 0;max-width:30em;color:var(--navy);
+}
+
+/* ---------- 셀모임 ---------- */
+.sub{
+  display:flex;align-items:center;gap:11px;
+  font-family:var(--serif);font-size:1.22rem;font-weight:700;
+  color:var(--navy);margin:44px 0 14px;
+  padding-top:26px;border-top:1px solid var(--line);
+}
+.sub .ico{width:23px;height:23px;color:var(--blue);stroke-width:1.6}
+.cells{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 20px}
+.cell{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:22px 20px}
+.cell h4{font-family:var(--serif);font-size:1.04rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.cell p{font-size:0.93rem;line-height:1.7;color:var(--ink-soft);margin:0;max-width:none}
+.cells-note{font-size:0.93rem;color:var(--ink-soft)}
+
+/* ---------- 설교 ---------- */
+.video{position:relative;padding-top:56.25%;background:var(--navy-deep);margin-bottom:16px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-note{font-size:0.9rem;color:var(--ink-soft);margin-bottom:26px}
+
+/* ---------- 이달의 소식 ---------- */
+.month{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:24px}
+.month strong{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--gold);letter-spacing:-0.02em;line-height:1.2}
+.month span{font-size:0.88rem;color:#9FB3D4}
+
+.letter{border-left:3px solid var(--gold);padding-left:20px;margin-bottom:36px;max-width:33em;color:#DCE6F5}
+.letter p{margin-bottom:14px}
+.letter p:last-child{margin-bottom:0}
+.letter .sign{font-family:var(--serif);color:var(--white);font-size:0.94rem}
+
+.plan{list-style:none;border-top:1px solid rgba(255,255,255,.2)}
+.plan li{display:flex;gap:20px;padding:16px 2px;border-bottom:1px solid rgba(255,255,255,.2);flex-wrap:wrap}
+.plan .d{font-family:var(--serif);color:var(--gold);font-size:0.95rem;min-width:5.6em;flex:none}
+.plan .c{flex:1;min-width:13em}
+.plan .c strong{display:block;font-weight:500;color:var(--white)}
+.plan .c small{display:block;font-size:0.88rem;color:#9FB3D4;line-height:1.65}
+
+/* ---------- 처음 오시는 분 ---------- */
+.steps{list-style:none;counter-reset:s;margin-bottom:30px}
+.steps li{counter-increment:s;display:flex;gap:16px;padding:12px 0;align-items:flex-start}
+.steps li::before{
+  content:counter(s);flex:none;width:28px;height:28px;
+  background:var(--navy);color:var(--gold);font-size:0.85rem;font-weight:700;
+  display:grid;place-items:center;margin-top:4px;
+}
+
+/* ---------- 오시는 길 ---------- */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:30px}
+.visit h3{font-size:0.87rem;font-weight:500;color:var(--ink-soft);margin-bottom:6px}
+.visit p{margin-bottom:22px}
+.visit p:last-child{margin-bottom:0}
+.addr{font-family:var(--serif);font-size:1.12rem;line-height:1.6;color:var(--navy)}
+.tel{font-family:var(--serif);font-size:1.28rem;text-decoration:none;color:var(--navy)}
+.tel:hover{color:var(--blue)}
+
+/* ---------- 푸터 ---------- */
+.foot{background:var(--navy-deep);color:#9FB3D4;padding:46px 0 58px;font-size:0.88rem}
+.foot .mark{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.foot .mark .emblem{width:46px;height:46px}
+.foot .mark-name{color:var(--white);font-size:1.06rem}
+.foot-links{margin-top:18px;display:flex;gap:18px;flex-wrap:wrap}
+.foot-links a{color:#C6D4EA}
+
+@media (max-width:660px){
+  .topbar .wrap{flex-direction:column;align-items:flex-start;padding-top:14px;padding-bottom:14px}
+  .nav{gap:14px}
+  .hero{padding:72px 0 64px}
+  /* 좁은 화면에서는 글자가 사진 전체에 걸치므로 더 진하게 덮습니다 */
+  .hero::after{
+    background:linear-gradient(to bottom,
+      rgba(4,13,34,.80) 0%,
+      rgba(4,13,34,.66) 45%,
+      rgba(4,13,34,.78) 100%);
+  }
+  .band{padding:52px 0}
+  .cells{grid-template-columns:1fr;gap:12px}
+  .visit{grid-template-columns:1fr;gap:20px}
+  .title{font-size:1.4rem}
+  .mark .emblem{width:36px;height:36px}
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<!-- 기독교대한감리회 공식 로고 (배경 제거 처리한 파일입니다) -->
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#">
+      <img class="emblem" src="images/kmc-logo.png" alt="기독교대한감리회" width="400" height="400">
+      <span>
+        <span class="mark-name">일산<em>예광</em>교회</span>
+        <span class="mark-sub">기독교대한감리회</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#about">교회 소개</a>
+      <a href="#sermon">설교</a>
+      <a href="#news">이달의 소식</a>
+      <a href="#new">처음 오시는 분</a>
+      <a href="#visit">오시는 길</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= 첫 화면 ================= -->
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="hero-line">빛되신 예수님을<br><b>따라가는 교회</b></h1>
+      <p class="hero-verse">빛은 우리가 눈뜨기 전에 이미 와 있었습니다.</p>
+      <p class="hero-sub">
+        준비된 사람만 오는 곳이 아닙니다. 믿음이 흔들리는 분도, 오랫동안
+        교회를 떠나 계셨던 분도 그대로 오시면 됩니다.
+      </p>
+      <p class="hero-time">주일 낮예배 <strong>오전 11시</strong></p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#new">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21V4h10v17"/><path d="M4 21h16"/><circle cx="13" cy="12.6" r="1"/></svg>
+          처음 오시는 분께
+        </a>
+        <a class="btn btn-ghost" href="#visit">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          오시는 길
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 교회 소개 ================= -->
+  <section class="band band-pale prose" id="about">
+    <div class="wrap">
+      <h2 class="title">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20.5v-9l7-5 7 5v9"/><path d="M9.6 20.5v-5h4.8v5"/><path d="M12 6.5V2.6M10.2 4.2h3.6"/><path d="M3.5 20.5h17"/></svg>
+        교회 소개
+      </h2>
+      <p class="lead">기독교대한감리회에 속한 교회입니다.</p>
+
+      <p>
+        교회 이름의 예광은 빛을 뜻합니다. 우리가 하나님을 찾아 나선 것이
+        먼저가 아니라, 하나님께서 우리가 알기도 전에 먼저 다가와 계셨다는
+        고백이 이 이름 안에 있습니다.
+      </p>
+
+      <p class="pull">
+        은혜가 먼저 있었고, 그 다음에 변화가 따라옵니다.<br>
+        순서가 바뀌면 신앙은 무거운 짐이 됩니다.
+      </p>
+
+      <p>
+        그래서 우리는 사람이 먼저 착해져야 하나님께 나아갈 수 있다고 가르치지
+        않습니다. 십자가에서 이미 값이 치러졌기 때문에, 이곳에 오시기 위해
+        갖추셔야 할 조건은 없습니다. 달라지는 일은 그 은혜를 알게 된 다음에
+        성령께서 하십니다.
+      </p>
+
+      <p>
+        동시에 우리는 믿음이 마음속에만 머무는 것이 아니라고 배워 왔습니다.
+        존 웨슬리는 거룩함이 개인의 경건에서 끝나지 않고 이웃에게로 흘러가야
+        한다고 보았습니다. 우리 교회가 삶의 자리에서 빛과 소금으로 살아가는
+        성도를 세우고, 섬김과 나눔으로 다음세대를 준비하려는 이유가 여기에
+        있습니다.
+      </p>
+
+      <p>
+        확신이 있어야 들어올 수 있는 곳이 아니라, 확신을 함께 찾아가는
+        곳이 되기를 바랍니다.
+      </p>
+
+      <h3 class="sub">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.6" r="3.1"/><circle cx="17.2" cy="9.8" r="2.3"/><path d="M3.4 19.4c0-3.1 2.5-5.2 5.6-5.2s5.6 2.1 5.6 5.2"/><path d="M16.4 14.4c2.7 0 4.4 1.8 4.4 4.3"/></svg>
+        셀모임
+      </h3>
+      <p>
+        주일 예배만으로는 서로의 삶을 알기 어렵습니다. 그래서 우리 교회는
+        작은 모임을 중요하게 여깁니다. 존 웨슬리가 세운 속회가 그러했듯,
+        몇 사람이 둘러앉아 한 주간의 삶을 나누고 함께 기도하는 자리에서
+        신앙은 실제로 자랍니다.
+      </p>
+
+      <div class="cells">
+        <div class="cell">
+          <h4>청년장년 셀</h4>
+          <p>청년과 장년이 함께 모여 말씀을 나누고 서로의 일상을 돌봅니다.</p>
+        </div>
+        <div class="cell">
+          <h4>여선교회 셀</h4>
+          <p>기도와 섬김으로 교회와 이웃을 세워 가는 여성도들의 모임입니다.</p>
+        </div>
+        <div class="cell">
+          <h4>남선교회 셀</h4>
+          <p>일터와 가정의 자리에서 믿음을 지키려는 남성도들의 모임입니다.</p>
+        </div>
+      </div>
+
+      <p class="cells-note">
+        모임 시간과 장소는 교회로 문의해 주십시오.
+        처음 오신 분도 언제든 함께하실 수 있습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= 설교 ================= -->
+  <section class="band" id="sermon">
+    <div class="wrap">
+      <h2 class="title">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2.6" width="6" height="11" rx="3"/><path d="M5.4 11.4a6.6 6.6 0 0013.2 0"/><path d="M12 18v3.2M8.8 21.4h6.4"/></svg>
+        설교
+      </h2>
+      <p class="lead">
+        주일설교 재생목록과 연결되어 있습니다. 새 설교를 재생목록에 추가하시면
+        이 자리도 함께 바뀝니다. 파일을 다시 고치실 필요가 없습니다.
+      </p>
+
+      <!--
+        ★ 여기는 손대지 마십시오 ★
+        '주일설교' 재생목록을 불러옵니다.
+        ※ 재생목록 정렬이 '최신순'이어야 최근 설교가 맨 앞에 나옵니다.
+      -->
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/videoseries?list=PL0SoWaG8hzbID3Z0vikL1cYEqQQos6T7l"
+          title="일산예광교회 주일설교"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <p class="video-note">
+        영상 화면 왼쪽 위의 목록 단추를 누르시면 지난 설교를 이어서 보실 수 있습니다.
+      </p>
+
+      <div class="row">
+        <a class="btn btn-navy" href="https://www.youtube.com/playlist?list=PL0SoWaG8hzbID3Z0vikL1cYEqQQos6T7l" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.2 5.4c2.9-1.3 5.8-1.3 8.8 0v14c-3-1.3-5.9-1.3-8.8 0z"/><path d="M20.8 5.4c-2.9-1.3-5.8-1.3-8.8 0v14c3-1.3 5.9-1.3 8.8 0z"/><path d="M7.2 8.4v3.4M5.6 9.6h3.2"/></svg>
+          지난 설교 전체 보기
+        </a>
+        <a class="btn btn-outline" href="https://www.youtube.com/@jesuslight153" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.4" y="5.2" width="19.2" height="13.6" rx="4.2"/><path d="M10.2 9.4l5.2 2.8-5.2 2.8z" fill="currentColor" stroke="none"/></svg>
+          유튜브 채널 바로가기
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 이달의 소식 ================= -->
+  <!--
+  ██████████████████████████████████████████████████████████
+  ██                                                      ██
+  ██   여기부터 아래 '여기까지' 표시 사이만 고치시면 됩니다.   ██
+  ██   한 달에 한 번, 이 안의 글자만 바꾸시면 끝납니다.       ██
+  ██   다른 곳은 손대지 않으셔도 됩니다.                     ██
+  ██                                                      ██
+  ██████████████████████████████████████████████████████████
+  -->
+  <section class="band band-navy" id="news">
+    <div class="wrap">
+      <h2 class="title">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.4" y="5.4" width="17.2" height="15.2" rx="2.2"/><path d="M3.4 10.2h17.2M8.2 2.8v4.4M15.8 2.8v4.4"/><path d="M7.6 14h2M7.6 17.4h2M12.4 14h4M12.4 17.4h4"/></svg>
+        이달의 소식
+      </h2>
+      <p class="lead">한 달에 한 번 새로 올립니다.</p>
+
+      <!-- ① 이번 달 표시 -->
+      <p class="month">
+        <strong>2026년 10월</strong>
+        <span>10월 1일 올림</span>
+      </p>
+
+      <!-- ② 목회 서신 (필요 없으시면 <div class="letter"> 부터 </div> 까지 통째로 지우십시오) -->
+      <div class="letter">
+        <p>
+          가을이 깊어 갑니다. 한 해의 끝자락이 보이기 시작하면 마음이
+          바빠지지만, 그럴수록 하나님께서 먼저 우리를 붙들고 계셨다는
+          사실을 붙잡으시기 바랍니다.
+        </p>
+        <p>
+          이번 달에는 성찬으로 한 해를 되돌아보려 합니다. 오래 교회를
+          쉬셨던 분들도 부담 없이 나오시기를 청합니다.
+        </p>
+        <p class="sign">담임목사 드림</p>
+      </div>
+
+      <!-- ③ 이번 달 일정 (한 줄 늘리려면 <li> 부터 </li> 까지 복사해 붙이십시오) -->
+      <ul class="plan">
+
+        <li>
+          <span class="d">10월 4일</span>
+          <span class="c">
+            <strong>성찬 예배</strong>
+            <small>주일 낮예배 중에 함께 드립니다. 세례 여부와 관계없이 누구든 참여하실 수 있습니다.</small>
+          </span>
+        </li>
+
+        <li>
+          <span class="d">10월 11일</span>
+          <span class="c">
+            <strong>전교인 가을 나들이</strong>
+            <small>오전 8시 교회 앞 출발. 참가 신청은 주일 예배 후 받습니다.</small>
+          </span>
+        </li>
+
+        <li>
+          <span class="d">10월 18일</span>
+          <span class="c">
+            <strong>셀모임 연합 기도회</strong>
+            <small>오후 2시, 본당. 세 셀이 함께 모여 기도합니다.</small>
+          </span>
+        </li>
+
+        <li>
+          <span class="d">10월 25일</span>
+          <span class="c">
+            <strong>종교개혁 주일</strong>
+            <small>특별 찬양이 준비되어 있습니다.</small>
+          </span>
+        </li>
+
+        <li>
+          <span class="d">10월 매주 화요일</span>
+          <span class="c">
+            <strong>이웃 반찬 나눔</strong>
+            <small>오전 10시부터. 함께 섬기실 분은 교회로 연락 주십시오.</small>
+          </span>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+  <!--
+  ██████████████████████████████████████████████████████████
+  ██              여기까지가 매달 고치실 곳입니다              ██
+  ██████████████████████████████████████████████████████████
+  -->
+
+  <!-- ================= 처음 오시는 분 ================= -->
+  <section class="band" id="new">
+    <div class="wrap">
+      <h2 class="title">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21V3.6h10V21"/><path d="M3.4 21h17.2"/><circle cx="13.1" cy="12.4" r="1.1"/><path d="M16 8.4h4.2v12.6"/></svg>
+        처음 오시는 분께
+      </h2>
+      <p class="lead">가장 많이 받는 질문에 먼저 답을 드립니다.</p>
+
+      <ol class="steps">
+        <li><span><strong>옷차림은 편한 대로</strong> 오시면 됩니다. 정장을 입지 않으셔도 아무도 신경 쓰지 않습니다.</span></li>
+        <li><span><strong>뒤쪽 아무 자리</strong>에나 앉으시면 됩니다. 지정석은 없습니다.</span></li>
+        <li><span><strong>헌금은 하지 않으셔도 됩니다.</strong> 헌금 시간에는 그냥 앉아 계시면 됩니다.</span></li>
+        <li><span><strong>앞에 나와 소개하시라고 하지 않습니다.</strong> 조용히 예배만 드리고 가셔도 좋습니다.</span></li>
+        <li><span>미리 물어보고 싶은 것이 있으시면 아래로 연락 주십시오.</span></li>
+      </ol>
+
+      <div class="row">
+        <a class="btn btn-navy" href="tel:0319137955">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.4h3.4l1.7 4.2-2.1 1.5a12.4 12.4 0 006.7 6.7l1.5-2.1 4.2 1.7v3.4a1.8 1.8 0 01-2 1.8C11.2 20 4 12.8 3.4 5.4a1.8 1.8 0 011.8-2z"/></svg>
+          전화로 문의 031-913-7955
+        </a>
+        <a class="btn btn-outline" href="mailto:aden.tree.apple@gmail.com">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.8" y="5" width="18.4" height="14" rx="2.2"/><path d="M3.4 6.6L12 12.8l8.6-6.2"/></svg>
+          이메일로 문의
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 오시는 길 ================= -->
+  <section class="band band-pale" id="visit">
+    <div class="wrap">
+      <h2 class="title">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.4s7.2-6.5 7.2-11.4a7.2 7.2 0 10-14.4 0c0 4.9 7.2 11.4 7.2 11.4z"/><circle cx="12" cy="9.8" r="2.7"/></svg>
+        오시는 길
+      </h2>
+      <p class="lead">지하철역과는 거리가 있어 버스나 자가용을 권해 드립니다.</p>
+
+      <div class="visit">
+        <div>
+          <h3>주소</h3>
+          <p class="addr">경기도 고양시 일산서구<br>장자길 81-1</p>
+
+          <h3>전화</h3>
+          <p><a class="tel" href="tel:0319137955">031-913-7955</a></p>
+        </div>
+
+        <div>
+          <h3>버스<span class="todo">확인필요</span></h3>
+          <p>가장 가까운 정류장 이름과 노선 번호를 적어 주십시오.</p>
+
+          <h3>주차<span class="todo">확인필요</span></h3>
+          <p>주차 가능 대수와 주일 혼잡 여부를 적어 주십시오.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <a class="btn btn-navy" href="https://map.naver.com/p/search/일산예광교회" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.2 3.4L3.4 5.8v14.8l5.8-2.4 5.6 2.4 5.8-2.4V3.4l-5.8 2.4z"/><path d="M9.2 3.4v14.8M14.8 5.8v14.8"/></svg>
+          네이버 지도로 열기
+        </a>
+        <a class="btn btn-outline" href="https://map.kakao.com/?q=경기도 고양시 일산서구 장자길 81-1" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.2 3.4L3.4 5.8v14.8l5.8-2.4 5.6 2.4 5.8-2.4V3.4l-5.8 2.4z"/><path d="M9.2 3.4v14.8M14.8 5.8v14.8"/></svg>
+          카카오맵으로 열기
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="mark">
+      <img class="emblem" src="images/kmc-logo.png" alt="기독교대한감리회" width="400" height="400">
+      <span>
+        <span class="mark-name">일산<em>예광</em>교회</span>
+        <span class="mark-sub">기독교대한감리회</span>
+      </span>
+    </div>
+    <p>경기도 고양시 일산서구 장자길 81-1 · 031-913-7955</p>
+    <div class="foot-links">
+      <a href="https://www.youtube.com/@jesuslight153" target="_blank" rel="noopener">유튜브</a>
+      <a href="mailto:aden.tree.apple@gmail.com">이메일</a>
+      <a href="#visit">오시는 길</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
