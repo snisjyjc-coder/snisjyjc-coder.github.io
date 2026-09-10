@@ -270,11 +270,14 @@ a{color:inherit}
 
 /* ---------- 오시는 길 ---------- */
 .map{
-  position:relative;padding-top:52%;
-  margin-bottom:32px;background:var(--white);
+  margin-bottom:32px;
+  background:var(--white);
   border:1px solid var(--line);
+  overflow:hidden;
+  min-height:120px;
 }
-.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .root_daum_roughmap{width:100%}
+.map .root_daum_roughmap .wrap_map{height:400px}
 .visit{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:30px}
 .visit h3{font-size:0.87rem;font-weight:500;color:var(--ink-soft);margin-bottom:6px}
 .visit p{margin-bottom:22px}
@@ -305,7 +308,7 @@ a{color:inherit}
   .band{padding:52px 0}
   .cells{grid-template-columns:1fr;gap:12px}
   .visit{grid-template-columns:1fr;gap:20px}
-  .map{padding-top:78%}
+  .map .root_daum_roughmap .wrap_map{height:300px}
   .title{font-size:1.4rem}
   .mark .emblem{width:36px;height:36px}
 }
@@ -604,24 +607,33 @@ a{color:inherit}
       <p class="lead">지하철역과는 거리가 있어 버스나 자가용을 권해 드립니다.</p>
 
       <!--
-        ★ 지도 ★
-        네이버는 홈페이지에 넣는 지도 코드를 제공하지 않습니다.
-        그래서 우선 구글 지도를 넣어 두었습니다.
-
-        카카오맵으로 바꾸고 싶으시면 (국내 지도라 더 정확합니다)
-          1. map.kakao.com 에서 '일산예광교회' 를 검색합니다.
-          2. 장소를 누르고 [공유] → [지도 퍼가기] 를 누릅니다.
-          3. 나오는 코드를 복사합니다.
-          4. 아래 <div class="map"> 부터 </div> 까지를 지우고
-             복사한 코드를 그 자리에 붙여 넣으십시오.
+      ┌────────────────────────────────────────────────────┐
+      │  ★ 지도 ★   카카오맵 지도 퍼가기                     │
+      │                                                    │
+      │  다른 위치로 바꾸시려면 map.kakao.com 에서 장소를    │
+      │  검색하시고 [공유] → [지도 퍼가기] 의 코드를 받아    │
+      │  아래 timestamp 와 key 두 값만 바꾸시면 됩니다.      │
+      │                                                    │
+      │  mapWidth 는 100% 로 두셔야 휴대전화에서 화면 밖으로 │
+      │  삐져나가지 않습니다. 숫자로 바꾸지 마십시오.        │
+      └────────────────────────────────────────────────────┘
       -->
+
+      <!-- ===== START 여기부터 ===== -->
       <div class="map">
-        <iframe
-          src="https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B3%A0%EC%96%91%EC%8B%9C%20%EC%9D%BC%EC%82%B0%EC%84%9C%EA%B5%AC%20%EC%9E%A5%EC%9E%90%EA%B8%B8%2081-1&z=17&hl=ko&output=embed"
-          title="일산예광교회 위치"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="daumRoughmapContainer1789021840065" class="root_daum_roughmap root_daum_roughmap_landing"></div>
       </div>
+
+      <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+      <script charset="UTF-8">
+        new daum.roughmap.Lander({
+          "timestamp": "1789021840065",
+          "key": "2inm4mvedabj",
+          "mapWidth": "100%",
+          "mapHeight": "400"
+        }).render();
+      </script>
+      <!-- ===== END 여기까지 ===== -->
 
       <div class="visit">
         <div>
@@ -646,7 +658,7 @@ a{color:inherit}
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.2 3.4L3.4 5.8v14.8l5.8-2.4 5.6 2.4 5.8-2.4V3.4l-5.8 2.4z"/><path d="M9.2 3.4v14.8M14.8 5.8v14.8"/></svg>
           네이버 지도로 열기
         </a>
-        <a class="btn btn-outline" href="https://map.kakao.com/?q=경기도 고양시 일산서구 장자길 81-1" target="_blank" rel="noopener">
+        <a class="btn btn-outline" href="https://place.map.kakao.com/8013373" target="_blank" rel="noopener">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.2 3.4L3.4 5.8v14.8l5.8-2.4 5.6 2.4 5.8-2.4V3.4l-5.8 2.4z"/><path d="M9.2 3.4v14.8M14.8 5.8v14.8"/></svg>
           카카오맵으로 열기
         </a>
